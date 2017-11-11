@@ -1,3 +1,4 @@
+// react dependencies
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
@@ -7,6 +8,10 @@ import {
   Route
 } from 'react-router-dom';
 
+// bootstrap dependencies
+import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
+
+// my components
 import Story from './Story.jsx';
 import Login from './Login.jsx';
 import Signup from './Signup.jsx';
