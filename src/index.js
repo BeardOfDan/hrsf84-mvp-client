@@ -30,6 +30,7 @@ const BasicExample = () => (
         <li><Link to="/about">About</Link></li>
         <li><Link to="/topics">Topics</Link></li>
         <li><Link to='/story'>Story</Link></li>
+        <li><Link to='/The Second Story'>The Second Story</Link></li>
       </ul>
 
       <hr />
@@ -38,6 +39,7 @@ const BasicExample = () => (
       <Route path="/about" component={About} />
       <Route path="/topics" component={Topics} />
       <Route path='/story' component={Story} story={sampleStory} />
+      <Route path='/The Second Story' component={Story} />
 
     </div>
 
