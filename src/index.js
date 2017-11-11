@@ -39,7 +39,8 @@ const BasicExample = () => (
       <Route path="/about" component={About} />
       <Route path="/topics" component={Topics} />
       <Route path='/story' component={Story} story={sampleStory} />
-      <Route path='/The Second Story' component={Story} />
+      {/* <Route path='/The Second Story' component={Story} /> */}
+      {<Route path='*' component={Story} />}
 
     </div>
 

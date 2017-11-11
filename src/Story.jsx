@@ -1,35 +1,36 @@
 
 import React from 'react';
-import $ from 'jquery';
+// import $ from 'jquery';
 
 
 export default class Story extends React.Component {
   constructor(props) {
     super(props);
 
-    const path = 'The%20Second%20Story'; //this.props.location.pathname;
+    const path = this.props.location.pathname;
+    const fullPath = `https://hrsf84-mvp-server.herokuapp.com${path}`;
 
     this.state = {};// json format of the story
 
     const self = this;
 
-    console.log('About to do the GET request...');
+    console.log('About to do the GET request for the url\n', `${fullPath}\n`);
 
-    console.log('For the url\n', `http://cors-anywhere.herokuapp.com/10.7.64.8:5000/${path}\n`);
-
-    $.get(`http://cors-anywhere.herokuapp.com/10.7.64.8:5000/${path}`, (data) => {
-      console.log('inside of the function', data);
-      if ((data[0] !== '<') && (typeof JSON.parse(data) === 'object')) {
-        self.setState(data);
-      } else {
-        console.log('The data was not an object');
-      }
-    }, (arg) => {
-      console.log('arg', arg);
-    });
+    fetch(fullPath, {
+      'method': 'GET',
+      'Content-Type': 'application/json'
+    })
+      .then((resp) => { console.log('resp', resp); return resp.json(); }) // Transform the data into json
+      .then((res) => {
+        console.log('data', res);
+        self.setState(res); // set state with the data
+      })
+      .catch((e) => {
+        console.log('e', e);
+      });
 
     // do an async GET request with the path to get the data and set the state with it
-    // fetch(`http://10.7.64.8:5000/${path}`, { 'mode': 'no-cors' })
+    // fetch(`https://hrsf84-mvp-server.herokuapp.com/${path}`, { 'mode': 'no-cors' })
     //   .then(function (response) {
 
     //     console.log('In the .then for the fetch request');
