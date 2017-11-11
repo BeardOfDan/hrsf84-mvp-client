@@ -1,7 +1,6 @@
 // react dependencies
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
 import registerServiceWorker from './registerServiceWorker';
 import {
   BrowserRouter as Router,
@@ -10,6 +9,10 @@ import {
 
 // bootstrap dependencies
 import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
+import '../node_modules/bootstrap/dist/js/bootstrap.min.js';
+
+// my css
+import './index.css';
 
 // my components
 import Story from './Story.jsx';
