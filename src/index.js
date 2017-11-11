@@ -8,10 +8,14 @@ import {
 } from 'react-router-dom';
 
 import Story from './Story.jsx';
+import Login from './Login.jsx';
+import Signup from './Signup.jsx';
 
 const BasicExample = () => (
   <Router>
     <div>
+      {<Route path='/login' component={Login} />}
+      {<Route path='/signup' component={Signup} />}
       {<Route path='*' component={Story} />}
     </div>
   </Router>
