@@ -16,6 +16,9 @@ const BasicExample = () => (
     <div>
       {<Route path='/login' component={Login} />}
       {<Route path='/signup' component={Signup} />}
+
+      {/* TODO: Figure out how to only have the below route execute if the above routes are not a match */}
+
       {<Route path='*' component={Story} />}
     </div>
   </Router>

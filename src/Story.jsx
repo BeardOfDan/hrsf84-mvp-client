@@ -1,7 +1,5 @@
 
 import React from 'react';
-// import $ from 'jquery';
-
 
 export default class Story extends React.Component {
   constructor(props) {
@@ -10,11 +8,11 @@ export default class Story extends React.Component {
     const path = this.props.location.pathname;
     const fullPath = `https://hrsf84-mvp-server.herokuapp.com${path}`;
 
-    this.state = {
+    this.state = { // a json format of the story
       'title': 'Please Wait for the story to load...',
       'story': 'Fetching the story now...',
       'images': []
-    }; // will recieve a json format of the story
+    };
 
     const self = this;
 
@@ -22,14 +20,11 @@ export default class Story extends React.Component {
       'method': 'GET',
       'Content-Type': 'application/json'
     })
-      // check if the first character or resp is '<'
-      //   if so, then it is the 404 page, or some other html page
-      //   if not, then it's JSON, so keep it as it currently is
       .then((res) => { return res.json(); }) // Transform the data into json
       .then((res) => {
-        if (res.error === undefined) {
+        if (res.error === undefined) { // if it was not an error object that the server sent
           self.setState(res); // set state with the data
-        } else {
+        } else { // render a 404 page
           self.setState({
             'title': 'Nothing To See Here',
             'story': 'It appears that the story you attempted to fetch does not exist',
@@ -44,9 +39,6 @@ export default class Story extends React.Component {
   }
 
   render() {
-    // when figuring out the styling for this render, factor out the non-story reliant portions
-    // then load only the factored out portion when the story is not yet loaded
-
     return (
       <center>
         <div>
