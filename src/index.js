@@ -7,8 +7,10 @@ import {
   Route
 } from 'react-router-dom';
 
-// bootstrap dependencies
-import $ from 'jquery';
+// bootstrap dependency
+import '../node_modules/jquery/dist/jquery.js';
+
+// bootstrap
 import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
 import '../node_modules/bootstrap/dist/js/bootstrap.min.js';
 
