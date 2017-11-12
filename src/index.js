@@ -12,7 +12,10 @@ import '../node_modules/jquery/dist/jquery.js';
 
 // bootstrap
 import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
-import '../node_modules/bootstrap/dist/js/bootstrap.min.js';
+
+// For some imperceptable reason, this line causes an error
+//   It will ultimately be needed, but for now, it's commented out
+// import '../node_modules/bootstrap/dist/js/bootstrap.min.js';
 
 // my css
 import './index.css';

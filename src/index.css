@@ -3,7 +3,8 @@ body {
   padding: 0;
   font-family: sans-serif;
 
-  padding-top: 70px; /* Offset is for the fixed top navbar */
+  /* Commented this line out, until the jquery before bootstrap import issue is resolved */
+/*  padding-top: 70px; */ /* Offset is for the fixed top navbar */
 }
 
 
