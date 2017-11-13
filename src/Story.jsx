@@ -1,6 +1,7 @@
 
 import React from 'react';
 import Home from './Home.jsx';
+import AllStories from './AllStories';
 
 export default class Story extends React.Component {
   constructor(props) {
@@ -19,7 +20,7 @@ export default class Story extends React.Component {
 
     let url = this.fullPath;
 
-    this.specificPaths = ['', '/', '/Home', '/Login', '/Signup'];
+    this.specificPaths = ['', '/', '/Home', 'All Stories', '/Login', '/Signup'];
 
 
     if (this.specificPaths.indexOf(this.path) > -1) { // don't do the query in this component
@@ -54,6 +55,8 @@ export default class Story extends React.Component {
     if (index > -1) { // render the particular component for that specific path
       if (index < 3) {
         return <Home />;
+      } else if (index === 3) {
+        return <AllStories />
       } else {
         return (
           <center>

@@ -1,6 +1,6 @@
 import React from 'react';
 
-export default class Home extends React.Component {
+export default class AllStories extends React.Component {
   constructor(props) {
     super(props);
 
@@ -13,7 +13,7 @@ export default class Home extends React.Component {
 
 
     // do fetch request to get the home page stories here...
-    fetch(`${this.homeServerPath}Home`, {
+    fetch(`${this.homeServerPath}All Stories`, {
       'method': 'GET',
       'Content-Type': 'application/json'
     })

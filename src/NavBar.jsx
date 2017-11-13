@@ -19,6 +19,9 @@ export default class NavBar extends React.Component {
               <a className="nav-link active" href={`${this.homePath}Home`} >Home</a>
             </li>
             <li className="nav-item">
+              <a className="nav-link" href={`${this.homePath}All Stories`} >All Stories</a>
+            </li>
+            <li className="nav-item">
               <a className="nav-link" href={`${this.homePath}The First Story`} >First Story</a>
             </li>
             <li className="nav-item">
@@ -36,3 +39,4 @@ export default class NavBar extends React.Component {
     );
   }
 }
+
