@@ -20,7 +20,10 @@ export default class Story extends React.Component {
 
     let url = this.fullPath;
 
-    this.specificPaths = ['', '/', '/Home', 'All Stories', '/Login', '/Signup'];
+    this.specificPaths = ['', '/', '/Home', '/All Stories', '/Login', '/Signup'];
+
+    console.log('this.path', this.path);
+    console.log(this.specificPaths.indexOf(this.path));
 
 
     if (this.specificPaths.indexOf(this.path) > -1) { // don't do the query in this component

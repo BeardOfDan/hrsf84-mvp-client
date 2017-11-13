@@ -11,6 +11,7 @@ export default class AllStories extends React.Component {
 
     const self = this;
 
+    console.log(`${this.homeServerPath}All Stories`);
 
     // do fetch request to get the home page stories here...
     fetch(`${this.homeServerPath}All Stories`, {
@@ -50,7 +51,7 @@ export default class AllStories extends React.Component {
     return (
       <center>
         <div>
-          <h2>Check out some of our top stories:</h2>
+          <h2>Check out all of our stories:</h2>
           <br />
           {
             this.state.stories.map((story, index, array) => {
