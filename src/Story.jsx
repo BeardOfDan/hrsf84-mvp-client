@@ -19,10 +19,11 @@ export default class Story extends React.Component {
 
     let url = this.fullPath;
 
-    this.specificPaths = ['', '/', '/Home'];
+    this.specificPaths = ['', '/', '/Home', '/Login', '/Signup'];
+
 
     if (this.specificPaths.indexOf(this.path) > -1) { // don't do the query in this component
-      console.log('It\'s good to be home\n'); // techncially, this case doesn't need any action
+      // techncially, this case doesn't need any action
     } else { // do the normal story query
       fetch(url, {
         'method': 'GET',
@@ -49,8 +50,18 @@ export default class Story extends React.Component {
   }
 
   render() {
-    if (this.specificPaths.indexOf(this.path) > -1) { // render the particular component for that specific path
-      return <Home />;
+    const index = this.specificPaths.indexOf(this.path)
+    if (index > -1) { // render the particular component for that specific path
+      if (index < 3) {
+        return <Home />;
+      } else {
+        return (
+          <center>
+            <p>It's the MVP project, and I spend WAY too much time trying to teach myself new technologies (like React Router) and doing trouble shooting to get relatively small features to work. So right now, the below image represents my authentication policy...</p>
+            <img src='https://www.commitstrip.com/wp-content/uploads/2017/06/Strip-La-s%C3%A9curit%C3%A9-apr%C3%A8s-tout-english650-final.jpg' alt='asdf' />
+          </center>
+        );
+      }
     } else { // perform the normal render
       return (
         <center>
